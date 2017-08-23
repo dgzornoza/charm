@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "rootDir": "..",
+        "moduleResolution": "classic",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": true,
+        "noEmitOnError": true,
+        "removeComments": false,
+        "target": "es5",
+        "declaration": false,
+        "sourceMap": true,
+        "strictNullChecks": true,
+
+        "allowUnusedLabels": false,
+        "noImplicitReturns": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

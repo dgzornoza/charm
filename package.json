@@ -1,0 +1,26 @@
+{
+    "name": "pixijs-charm",
+    "description": "Charm is an easy to use tweening library for the [Pixi](https://github.com/pixijs/pixi.js) 2D rendering engine.",
+    "version": "0.1.0",
+    "keywords": [
+        "pixijs",
+        "tweening library"
+    ],
+    "author": "David González Zornoza <dgzornoza@dgzornoza.com> fork from https://github.com/kittykatattack/charm",
+    "license": "MIT",
+    "scripts": {
+        "build-debug": "gulp build-debug",
+        "rebuild-debug": "gulp clean-output && gulp build-debug",
+        "build-release": "gulp clean-output && gulp build-release"
+    },
+    "devDependencies": {
+        "@types/es6-shim": "~0.31.32",
+        "@types/pixi.js": "~4.5.3",
+        "awesome-typescript-loader": "~3.2.3",
+        "tslint": "^5.0.0",
+        "typescript": "~2.4.2"
+    },
+    "dependencies": {
+        "es6-shim": "~0.35.3"
+    }
+}
