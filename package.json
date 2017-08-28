@@ -12,11 +12,11 @@
         "url": "git+https://github.com/dgzornoza/charm.git"
     },
     "license": "MIT",
-    "main": "./src/charm.ts",
+    "main": "./dist/charm.js",
     "types": "./src/interfaces/charm.d.ts",
     "scripts": {
-        "build-debug": "cross-env NODE_ENV=development webpack --debug --watch",
-        "build-release": "cross-env NODE_ENV=production webpack --debug"
+        "build-debug": "cross-env NODE_ENV=development webpack --debug --watch --config ./src/webpack.config.js",
+        "build-release": "cross-env NODE_ENV=production webpack --debug --config ./src/webpack.config.js"
     },
     "devDependencies": {
         "@types/es6-shim": "~0.31.32",

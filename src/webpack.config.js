@@ -8,6 +8,7 @@ const { CheckerPlugin } = require("awesome-typescript-loader")
 
 
 var libraryName = "charm";
+var baseUrl = __dirname + "/..";
 var plugins = [new CheckerPlugin()];
 
 // environment options
@@ -23,12 +24,12 @@ if (process.env.NODE_ENV === "production") {
 // webpack config
 var config = {
     entry: [
-        __dirname + "/src/charm.ts"
+        baseUrl + "/src/charm.ts"
     ],
     // Source maps support ("inline-source-map" also works)
     devtool: "source-map",
     output: {
-        path: path.join(__dirname, "/dist"),
+        path: path.join(baseUrl, "/dist"),
         filename: outputFile,
         library: libraryName,
         libraryTarget: "umd",
