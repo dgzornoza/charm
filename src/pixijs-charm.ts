@@ -352,7 +352,7 @@ export class Charm implements ICharm {
      * @return
      */
     public slide(displayObject: PIXI.DisplayObject, endX: number, endY: number, frames: number = 60, type: string = "smoothstep", yoyo: boolean = false,
-        delayBeforeRepeat: number = 0): ICharm.Tween.ITweenCollection {
+                 delayBeforeRepeat: number = 0): ICharm.Tween.ITweenCollection {
         return this.makeTween([
             // Create the x axis tween
             {
@@ -391,7 +391,7 @@ export class Charm implements ICharm {
      * @return
      */
     public breathe(displayObject: PIXI.DisplayObject, endScaleX: number = 0.8, endScaleY: number = 0.8, frames: number = 60, yoyo: boolean = true,
-        delayBeforeRepeat: number = 0): ICharm.Tween.ITweenCollection {
+                   delayBeforeRepeat: number = 0): ICharm.Tween.ITweenCollection {
 
         // Add `scaleX` and `scaleY` properties to Pixi sprites
         this._addScaleProperties(displayObject);
@@ -474,7 +474,7 @@ export class Charm implements ICharm {
      * @return
      */
     public strobe(displayObject: PIXI.DisplayObject, scaleFactor: number = 1.3, startMagnitude: number = 10, endMagnitude: number = 20,
-        frames: number = 10, yoyo: boolean = true, delayBeforeRepeat: number = 0): ICharm.Tween.ITweenCollection {
+                  frames: number = 10, yoyo: boolean = true, delayBeforeRepeat: number = 0): ICharm.Tween.ITweenCollection {
 
         let bounce: string = "bounce " + startMagnitude + " " + endMagnitude;
 
@@ -525,8 +525,8 @@ export class Charm implements ICharm {
      * @return
      */
     public wobble(displayObject: PIXI.DisplayObject, scaleFactorX: number = 1.2, scaleFactorY: number = 1.2, frames: number = 10, xStartMagnitude: number = 10,
-        xEndMagnitude: number = 10, yStartMagnitude: number = -10, yEndMagnitude: number = -10, friction: number = 0.98, yoyo: boolean = true,
-        delayBeforeRepeat: number = 0): ICharm.Tween.ITweenCollection {
+                  xEndMagnitude: number = 10, yStartMagnitude: number = -10, yEndMagnitude: number = -10, friction: number = 0.98, yoyo: boolean = true,
+                  delayBeforeRepeat: number = 0): ICharm.Tween.ITweenCollection {
 
         let bounceX: string = "bounce " + xStartMagnitude + " " + xEndMagnitude;
         let bounceY: string = "bounce " + yStartMagnitude + " " + yEndMagnitude;
@@ -595,7 +595,7 @@ export class Charm implements ICharm {
      * @return
      */
     public followCurve(displayObject: PIXI.DisplayObject, pointsArray: number[][], totalFrames: number, type: string = "smoothstep",
-        yoyo: boolean = false, delayBeforeRepeat: number = 0): ICharm.Tween.ITween {
+                       yoyo: boolean = false, delayBeforeRepeat: number = 0): ICharm.Tween.ITween {
 
         // Create the tween object
         let o: ICharm.Tween.ITween = {} as ICharm.Tween.ITween;
@@ -717,7 +717,7 @@ export class Charm implements ICharm {
      * @return
      */
     public walkPath(displayObject: PIXI.DisplayObject, originalPathArray: number[][], totalFrames: number = 300, type: string = "smoothstep",
-        loop: boolean = false, yoyo: boolean = false, delayBetweenSections: number = 0): ICharm.Tween.ITweenCollection {
+                    loop: boolean = false, yoyo: boolean = false, delayBetweenSections: number = 0): ICharm.Tween.ITweenCollection {
 
         // Clone the path array so that any possible references to sprite
         // properties are converted into ordinary numbers
@@ -829,7 +829,7 @@ export class Charm implements ICharm {
      * @return
      */
     public walkCurve(displayObject: PIXI.DisplayObject, curvedWaypoints: number[][][], totalFrames: number = 300, type: string = "smoothstep",
-        loop: boolean = false, yoyo: boolean = false, delayBeforeContinue: number = 0): ICharm.Tween.ITween {
+                     loop: boolean = false, yoyo: boolean = false, delayBeforeContinue: number = 0): ICharm.Tween.ITween {
 
         // Divide the `totalFrames` into sections for each part of the path
         let frames: number = totalFrames / curvedWaypoints.length;
