@@ -7,7 +7,7 @@ var path = require("path");
 const { CheckerPlugin } = require("awesome-typescript-loader")
 
 
-var libraryName = "charm";
+var libraryName = "pixijs-charm";
 var baseUrl = __dirname + "/..";
 var plugins = [new CheckerPlugin()];
 
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "production") {
 // webpack config
 var config = {
     entry: [
-        baseUrl + "/src/charm.ts"
+        baseUrl + "/src/pixijs-charm.ts"
     ],
     // Source maps support ("inline-source-map" also works)
     devtool: "source-map",

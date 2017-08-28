@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("pixi.js"), require("es6-shim"));
 	else if(typeof define === 'function' && define.amd)
-		define("charm", ["pixi.js", "es6-shim"], factory);
+		define("pixijs-charm", ["pixi.js", "es6-shim"], factory);
 	else if(typeof exports === 'object')
-		exports["charm"] = factory(require("pixi.js"), require("es6-shim"));
+		exports["pixijs-charm"] = factory(require("pixi.js"), require("es6-shim"));
 	else
-		root["charm"] = factory(root["pixi.js"], root["es6-shim"]);
+		root["pixijs-charm"] = factory(root["pixi.js"], root["es6-shim"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -981,4 +981,4 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=charm.js.map
+//# sourceMappingURL=pixijs-charm.js.map
