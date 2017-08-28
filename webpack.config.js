@@ -1,49 +1,52 @@
-var webpack = require('webpack'),
-    path = require('path'),
-    yargs = require('yargs');
+var webpack = require("webpack");
+var path = require("path");
 
-var libraryName = 'MyLib',
-    plugins = [],
-    outputFile;
+// `CheckerPlugin` is optional. Use it if you want async error reporting.
+// We need this plugin to detect a `--watch` mode. It may be removed later
+// after https://github.com/webpack/webpack/issues/3460 will be resolved.
+const { CheckerPlugin } = require("awesome-typescript-loader")
 
-if (yargs.argv.p) {
+
+var libraryName = "charm";
+var plugins = [new CheckerPlugin()];
+
+// environment options
+var outputFile;
+if (process.env.NODE_ENV === "production") {
     plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
-    outputFile = libraryName + '.min.js';
+    outputFile = libraryName + ".min.js";
 } else {
-    outputFile = libraryName + '.js';
+    outputFile = libraryName + ".js";
 }
 
+
+// webpack config
 var config = {
     entry: [
-        __dirname + '/src/TestClass.ts'
+        __dirname + "/src/charm.ts"
     ],
-    devtool: 'source-map',
+    // Source maps support ("inline-source-map" also works)
+    devtool: "source-map",
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, "/dist"),
         filename: outputFile,
         library: libraryName,
-        libraryTarget: 'umd',
+        libraryTarget: "umd",
         umdNamedDefine: true
     },
+    externals: {
+        "pixi.js": "pixi.js",
+        "es6-shim": "es6-shim"
+    },
     module: {
-        preLoaders: [
-            { test: /\.tsx?$/, loader: 'tslint', exclude: /node_modules/ }
-        ],
         loaders: [
-            { test: /\.tsx?$/, loader: 'ts', exclude: /node_modules/ }
+            { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
         ]
     },
     resolve: {
-        root: path.resolve('./src'),
-        extensions: ['', '.js', '.ts', '.jsx', '.tsx']
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
     },
-    plugins: plugins,
-
-    // Individual Plugin Options
-    tslint: {
-        emitErrors: true,
-        failOnHint: true
-    }
+    plugins: plugins
 };
 
 module.exports = config;

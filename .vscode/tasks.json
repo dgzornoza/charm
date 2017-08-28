@@ -6,46 +6,23 @@
     "isShellCommand": true,
     "showOutput": "always",
     "suppressTaskName": true,
+    "args": [
+        "--display-modules",
+        "--progress"
+    ],
     "tasks": [{
-            "taskName": "build",
-            "args": [
-                "run",
-                "rebuild-debug"
-            ],
-            // Watching
-            "isBackground": false,
-            // Show the output window only if unrecognized errors occur.
-            "showOutput": "always",
-            // Usar los mismos que la tarea 'build watch' si se quieren usar
-            "problemMatcher": []
-        },
-        {
-            "taskName": "rebuild",
-            "args": [
-                "run",
-                "build-debug"
-            ],
-            // Watching
-            "isBackground": false,
-            // Show the output window only if unrecognized errors occur.
-            "showOutput": "always",
-            // Usar los mismos que la tarea 'build watch' si se quieren usar
-            "problemMatcher": []
-        },
-        {
-            "taskName": "watch",
-            "args": [
-                "run",
-                "watch"
-            ],
-            // Make this the default build command.
-            "isBuildCommand": true,
-            // Watching
-            "isBackground": true,
-            // Show the output window only if unrecognized errors occur.
-            "showOutput": "always",
-            // Use the standard less compilation problem matcher.
-            "problemMatcher": []
-        }
-    ]
+        "taskName": "watch",
+        "args": [
+            "run",
+            "build-debug"
+        ],
+        // Make this the default build command.
+        "isBuildCommand": true,
+        // Watching
+        "isBackground": true,
+        // Show the output window only if unrecognized errors occur.
+        "showOutput": "always",
+        // Use the standard less compilation problem matcher.
+        "problemMatcher": []
+    }]
 }

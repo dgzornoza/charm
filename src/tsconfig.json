@@ -2,7 +2,7 @@
     "compilerOptions": {
         "module": "commonjs",
         "rootDir": "..",
-        "moduleResolution": "classic",
+        "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "noImplicitAny": true,
@@ -19,7 +19,6 @@
         "noUnusedLocals": true
     },
     "exclude": [
-        "node_modules",
-        "dist"
+        "node_modules"
     ]
 }
