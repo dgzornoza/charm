@@ -1,7 +1,7 @@
 {
     "name": "pixijs-charm",
     "description": "Charm is an easy to use tweening library for the [Pixi](https://github.com/pixijs/pixi.js) 2D rendering engine.",
-    "version": "0.1.2",
+    "version": "0.1.4",
     "keywords": [
         "pixijs",
         "tweening library"
@@ -16,7 +16,7 @@
     },
     "license": "MIT",
     "main": "./dist/pixijs-charm.js",
-    "types": "./src/interfaces/pixijs-charm.d.ts",
+    "types": "./dist/pixijs-charm.d.ts",
     "scripts": {
         "prepublish": "npm run build-release && npm run build-debug",
         "watch": "cross-env NODE_ENV=development webpack --debug --watch --config ./src/webpack.config.js",

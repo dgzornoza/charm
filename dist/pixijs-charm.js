@@ -89,6 +89,7 @@ module.exports = __webpack_require__(1);
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(2);
 __webpack_require__(3);
+/* tslint:enable max-line-length */
 var Charm = (function () {
     function Charm(renderingEngine) {
         if (renderingEngine === void 0) { renderingEngine = PIXI; }

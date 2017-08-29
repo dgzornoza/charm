@@ -40,9 +40,13 @@ var config = {
         "es6-shim": "es6-shim"
     },
     module: {
-        rules: [
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
-        ]
+        rules: [{
+            test: /\.tsx?$/,
+            loader: "awesome-typescript-loader",
+            options: {
+                configFileName: baseUrl + "/src/tsconfig.json"
+            }
+        }]
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"]
