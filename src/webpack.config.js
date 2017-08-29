@@ -40,7 +40,7 @@ var config = {
         "es6-shim": "es6-shim"
     },
     module: {
-        loaders: [
+        rules: [
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
         ]
     },
