@@ -1,0 +1,39 @@
+{
+    "name": "pixijs-charm",
+    "description": "Charm is an easy to use tweening library for the [Pixi](https://github.com/pixijs/pixi.js) 2D rendering engine.",
+    "version": "0.1.4",
+    "keywords": [
+        "pixijs",
+        "tweening library"
+    ],
+    "author": "David González Zornoza <dgzornoza@dgzornoza.com>",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dgzornoza/charm.git"
+    },
+    "bugs": {
+        "url": "https://github.com/dgzornoza/charm/issues"
+    },
+    "license": "MIT",
+    "main": "./dist/pixijs-charm.js",
+    "types": "./dist/pixijs-charm.d.ts",
+    "scripts": {
+        "prepublish": "npm run build-release && npm run build-debug",
+        "watch": "cross-env NODE_ENV=development webpack --debug --watch --config ./src/webpack.config.js",
+        "build-debug": "cross-env NODE_ENV=development webpack --debug --config ./src/webpack.config.js",
+        "build-release": "cross-env NODE_ENV=production webpack --debug --config ./src/webpack.config.js"
+    },
+    "devDependencies": {
+        "@types/es6-shim": "~0.31.32",
+        "@types/pixi.js": "~4.5.3",
+        "awesome-typescript-loader": "~3.2.3",
+        "cross-env": "~5.0.5",
+        "tslint": "^5.0.0",
+        "typescript": "~2.4.2",
+        "webpack": "~3.5.5"
+    },
+    "dependencies": {
+        "pixi.js": "~4.5.5",
+        "es6-shim": "~0.35.3"
+    }
+}
